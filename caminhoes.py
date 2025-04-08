@@ -8,8 +8,8 @@ for col in df.select_dtypes(include=['object']):
     df[col] = df[col].str.strip()
 
 # 2) Definir uma lista de cores e mapear cada caminhão a uma cor única
-colors = ['red', 'blue', 'green', 'purple', 'orange', 'darkred', 
-          'lightred', 'beige', 'darkblue', 'darkgreen', 'cadetblue', 
+colors = ['red', 'blue', 'green', 'purple', 'orange', 'darkred',
+          'beige', 'darkblue', 'darkgreen', 'cadetblue', 
           'darkpurple', 'pink', 'lightblue', 'lightgreen', 'gray', 
           'black', 'lightgray']
 truck_colors = {}
@@ -37,6 +37,7 @@ for truck, group in df.groupby('CAMINHAO'):
         # Criar o popup exibindo Caminhão e Faturamento Bruto
         popup_text = f"""
         <b>Caminhão:</b> {row['CAMINHAO']}<br>
+        <b>Cliente:</b> {row['NOME FANTASIA']}<br>
         <b>Faturamento Bruto:</b> {row['FATURAMENTO']}
         """
         
@@ -47,11 +48,14 @@ for truck, group in df.groupby('CAMINHAO'):
             tooltip=row['NOME FANTASIA'],
             icon=folium.Icon(color=truck_color, icon='shopping-cart')
         ).add_to(feature_group)
+        
+        # Marcador da casa com ícone de lar
         folium.Marker(
             location=[lat_casa, lon_casa],
             popup="Casa de origem",
             icon=folium.Icon(color='green', icon='home')
         ).add_to(feature_group)
+        
         # Desenhar a rota (linha reta) entre a casa e a loja com a mesma cor
         folium.PolyLine(
             locations=[(lat_casa, lon_casa), (lat_dest, lon_dest)],
@@ -62,7 +66,33 @@ for truck, group in df.groupby('CAMINHAO'):
     
     feature_group.add_to(mapa)
 
-# 5) Adicionar o controle de camadas e salvar o mapa em um arquivo HTML
+# 5) Adicionar o controle de camadas
 folium.LayerControl().add_to(mapa)
+
+# 6) Calcular a contagem de marcadores com base no valor único de NOME FANTASIA
+unique_markers = df['NOME FANTASIA'].nunique()
+
+# 7) Inserir uma caixa de informação no canto inferior esquerdo do mapa
+legend_html = f'''
+<div style="
+    position: fixed; 
+    bottom: 50px; 
+    left: 50px; 
+    width: 250px;              /* Mantém a largura */
+    background-color: white; 
+    border: 2px solid grey; 
+    z-index:9999; 
+    font-size:14px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    white-space: normal;       /* Permite quebra de linha */
+">
+   <br> 🏬 Número de Clientes: {unique_markers}<br>
+     🔄 Atualizado : 08/04/2025
+</div>
+'''
+mapa.get_root().html.add_child(folium.Element(legend_html))
+
+# 8) Salvar o mapa em um arquivo HTML
 mapa.save('mapa_clientes.html')
 print("Mapa salvo como mapa_clientes.html")
