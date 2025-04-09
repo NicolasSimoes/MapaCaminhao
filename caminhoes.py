@@ -38,6 +38,7 @@ for truck, group in df.groupby('CAMINHAO'):
         popup_text = f"""
         <b>Caminhão:</b> {row['CAMINHAO']}<br>
         <b>Cliente:</b> {row['NOME FANTASIA']}<br>
+        <b>Peso:</b> {row['PESO']}<br>
         <b>Faturamento Bruto:</b> {row['FATURAMENTO']}
         """
         
