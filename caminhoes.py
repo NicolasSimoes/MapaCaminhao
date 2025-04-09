@@ -88,7 +88,7 @@ legend_html = f'''
     white-space: normal;       /* Permite quebra de linha */
 ">
    <br> 🏬 Número de Clientes: {unique_markers}<br>
-     🔄 Atualizado : 08/04/2025
+     🔄 Atualizado : 09/04/2025
 </div>
 '''
 mapa.get_root().html.add_child(folium.Element(legend_html))
