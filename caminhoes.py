@@ -7,7 +7,7 @@ df.columns = df.columns.str.strip()
 for col in df.select_dtypes(include=['object']):
     df[col] = df[col].str.strip()
 
-# 2) Definir uma lista de cores e mapear cada caminhão a uma cor única
+
 colors = ['red', 'blue', 'green', 'purple', 'orange', 'darkred',
           'beige', 'darkblue', 'darkgreen', 'cadetblue', 
           'darkpurple', 'pink', 'lightblue', 'lightgreen', 'gray', 
@@ -17,28 +17,29 @@ unique_trucks = df['CAMINHAO'].unique()
 for i, truck in enumerate(unique_trucks):
     truck_colors[truck] = colors[i % len(colors)]
 
-# 3) Criar o mapa base (centralizado na região de interesse)
+
 mapa = folium.Map(location=[-3.8666699, -38.5773332], zoom_start=10)
 
-# 4) Agrupar os dados por caminhão e criar os elementos no mapa
+
 for truck, group in df.groupby('CAMINHAO'):
     feature_group = folium.FeatureGroup(name=f"Caminhão: {truck}")
     truck_color = truck_colors[truck]
     
     for _, row in group.iterrows():
-        # Coordenadas da loja (destino)
+       
         lat_dest = row['LATITUDE']
         lon_dest = row['LONGITUDE']
         
-        # Coordenadas da casa (origem)
+        
         lat_casa = row['LATITUDE CASA']
         lon_casa = row['LONGITUDE CASA']
         
-        # Criar o popup exibindo Caminhão e Faturamento Bruto
+        
         popup_text = f"""
         <b>Caminhão:</b> {row['CAMINHAO']}<br>
         <b>Cliente:</b> {row['NOME FANTASIA']}<br>
         <b>Peso:</b> {row['PESO']}<br>
+
         <b>Faturamento Bruto:</b> {row['FATURAMENTO']}
         """
         
