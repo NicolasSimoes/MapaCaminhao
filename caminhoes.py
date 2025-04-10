@@ -1,3 +1,4 @@
+
 import pandas as pd
 import folium
 
@@ -110,7 +111,7 @@ legend_html = f'''
 ">
     <b>🏬 Número de Clientes:</b> {unique_markers}<br>
     <b>🔄 Atualizado:</b> 10/04/2025<br><br>
-    <b>Por Caminhão:</b> {truck_usage_list}
+    <b> %  de carga usada por Caminhão:</b> {truck_usage_list}
 
 </div>
 '''
