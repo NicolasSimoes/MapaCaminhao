@@ -115,7 +115,7 @@ legend_html = f'''
     white-space: normal;
 ">
     <b>🏬 Número de Clientes:</b> {unique_markers}<br>
-    <b>🔄 Atualizado:</b> 11/04/2025<br><br>
+    <b>🔄 Atualizado:</b> 14/04/2025<br><br>
     <b> ☀ Cliente recebe apenas de manhã <br>
     <b> % de carga usada por Caminhão:</b> {truck_usage_list}
 </div>
