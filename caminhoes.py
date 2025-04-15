@@ -1,38 +1,65 @@
 import pandas as pd
 import folium
 
-# Leitura e limpeza do arquivo
+# 1. Leitura do CSV (ajuste o 'sep' e 'encoding' conforme necessário)
 df = pd.read_csv('dbcaminhoes.csv', sep=';', encoding='utf-8')
-df.columns = df.columns.str.strip()
 
+# 2. Limpeza dos nomes das colunas e espaços extras
+df.columns = df.columns.str.strip()
 for col in df.select_dtypes(include=['object']):
     df[col] = df[col].str.strip()
 
-# Converter coluna PESO para numérico
+# 3. Converter coluna PESO para numérico (trocando vírgula por ponto)
 df['PESO'] = pd.to_numeric(df['PESO'].str.replace(',', '.'), errors='coerce')
 
-# Agrupar dados dos caminhões para calcular o uso da carga
+# 4. Converter coluna FATURAMENTO para numérico
+#    a) Remover "R$" se existir
+#    b) Remover pontos de milhar (escape no ponto: r'\.')
+#    c) Trocar vírgula pelo ponto decimal
+#    d) Remover espaços extras e converter para float
+
+df['FATURAMENTO'] = (
+    df['FATURAMENTO']
+    .str.replace(r'R\$', '', regex=True)   # remove "R$"
+    .str.replace(r'\.', '', regex=True)      # remove pontos de milhar (literal)
+    .str.replace(',', '.', regex=True)       # troca vírgula por ponto
+    .str.strip()                             # remove espaços
+)
+# Opcional: visualizar os primeiros valores da coluna para conferência
+print("Valores limpos de FATURAMENTO:")
+print(df['FATURAMENTO'].head(10))
+
+df['FATURAMENTO'] = pd.to_numeric(df['FATURAMENTO'], errors='coerce')
+
+# 5. Agrupar dados dos caminhões para calcular o uso da carga
 df_group = df.groupby('CAMINHAO').agg(
     PESO_TOTAL=('PESO', 'sum'),
-    CARGA_UTIL=('CARGA', 'first')
+    CARGA_UTIL=('CARGA', 'first'),
+    VALOR_TOTAL=('FATURAMENTO', 'sum')
 ).reset_index()
 
-df_group['USO_%'] = (df_group['PESO_TOTAL'] / df_group['CARGA_UTIL']) * 100
+df_group['USO_%'] = (df_group['PESO_TOTAL'] / df_group['CARGA_UTIL']) * 100 
+df_group['VALOR_CARGA'] = df_group['VALOR_TOTAL']
 
-# Mapeamento de cores para cada caminhão
-colors = ['red', 'blue', 'green', 'purple', 'orange', 'darkred',
-          'beige', 'darkblue', 'darkgreen', 'cadetblue', 
-          'darkpurple', 'pink', 'lightblue', 'lightgreen', 'gray', 
-          'black', 'lightgray']
+# 6. Computar o faturamento total de todos os caminhões
+faturamento_total = df_group['VALOR_TOTAL'].sum()
+
+# 7. Mapeamento de cores para cada caminhão
+colors = [
+    'red', 'blue', 'green', 'purple', 'orange', 'darkred',
+    'beige', 'darkblue', 'darkgreen', 'cadetblue',
+    'darkpurple', 'pink', 'lightblue', 'lightgreen', 'gray',
+    'black', 'lightgray'
+]
 truck_colors = {}
 unique_trucks = df['CAMINHAO'].unique()
 for i, truck in enumerate(unique_trucks):
     truck_colors[truck] = colors[i % len(colors)]
 
-# Criação do mapa
+# 8. Criação do mapa
 mapa = folium.Map(location=[-3.8666699, -38.5773332], zoom_start=10)
 
-# Loop para adicionar os elementos de cada caminhão
+# 9. Loop para adicionar os elementos de cada caminhão
 for truck, group in df.groupby('CAMINHAO'):
     feature_group = folium.FeatureGroup(name=f"Caminhão: {truck}")
     truck_color = truck_colors.get(truck, 'gray')
@@ -47,22 +74,18 @@ for truck, group in df.groupby('CAMINHAO'):
         # Seleciona o ícone de acordo com o TURNO RECEBIMENTO
         turno = row['TURNO RECEBIMENTO'].strip().upper() if pd.notnull(row['TURNO RECEBIMENTO']) else ''
         if turno == 'MANHA':
-            # Ícone de sol para turno da manhã
             icon_marker = folium.Icon(color=truck_color, icon='sun', prefix='fa')
         elif turno == 'DIURNO':
-            # Ícone de pôr do sol para turno diurno
             icon_marker = folium.Icon(color=truck_color, icon='🌚')
         else:
-            # Ícone padrão, caso não caia nos casos acima
             icon_marker = folium.Icon(color=truck_color, icon='shopping-cart')
         
         popup_text = f"""
         <b>Caminhão:</b> {row['CAMINHAO']}<br>
         <b>Cliente:</b> {row['NOME FANTASIA']}<br>
         <b>Peso:</b> {row['PESO']}<br>
-          <b>TURNO DE RECEBIMENTO:</b> {row['TURNO RECEBIMENTO']}
+        <b>TURNO DE RECEBIMENTO:</b> {row['TURNO RECEBIMENTO']}<br>
         <b>Faturamento Bruto:</b> {row['FATURAMENTO']}
-
         """
         
         # Marcador para o destino (loja)
@@ -92,12 +115,16 @@ for truck, group in df.groupby('CAMINHAO'):
 
 folium.LayerControl().add_to(mapa)
 
-# Dados para a legenda
+# 10. Dados para a legenda
 unique_markers = df['NOME FANTASIA'].nunique()
 
 truck_usage_list = "<ul>"
 for _, row in df_group.iterrows():
-    truck_usage_list += f"<li>{row['CAMINHAO']}: {row['USO_%']:.0f}%</li>"
+    truck_usage_list += (
+        f"<li><b>{row['CAMINHAO']}</b> - "
+        f"Faturamento: R$ {row['VALOR_TOTAL']:.2f} / "
+        f"Uso: {row['USO_%']:.0f}%</li>"
+    )
 truck_usage_list += "</ul>"
 
 legend_html = f'''
@@ -115,13 +142,13 @@ legend_html = f'''
     white-space: normal;
 ">
     <b>🏬 Número de Clientes:</b> {unique_markers}<br>
+    <b>💰 Faturamento Total de Todos os Caminhões:</b> R$ {faturamento_total:.2f}<br>
     <b>🔄 Atualizado:</b> 15/04/2025<br><br>
-    <b> ☀ Cliente recebe apenas de manhã <br>
-    <b> % de carga usada por Caminhão:</b> {truck_usage_list}
+    <b>Caminhões:</b> {truck_usage_list}
 </div>
 '''
 mapa.get_root().html.add_child(folium.Element(legend_html))
 
-# Salvar o mapa em um arquivo HTML
+# 11. Salvar o mapa em um arquivo HTML
 mapa.save('mapa_clientes.html')
 print("Mapa salvo como mapa_clientes.html")
