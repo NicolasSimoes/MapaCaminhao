@@ -143,7 +143,7 @@ legend_html = f'''
 ">
     <b>🏬 Número de Clientes:</b> {unique_markers}<br>
     <b>💰 Faturamento Total de Todos os Caminhões:</b> R$ {faturamento_total:.2f}<br>
-    <b>🔄 Atualizado:</b> 15/04/2025<br><br>
+    <b>🔄 Atualizado:</b> 17/04/2025<br><br>
     <b>Caminhões:</b> {truck_usage_list}
 </div>
 '''
