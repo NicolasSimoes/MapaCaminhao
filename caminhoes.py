@@ -138,6 +138,7 @@ for truck, grp in df.groupby('MOTORISTA'):
         )
         icon = folium.DivIcon(html=icon_html)
         popup = ( f"<b>Motorista:</b>  {r['MOTORISTA']}<br>"
+                 f"<b>Placa:</b>  {r['CAMINHAO']}<br>"
                     f"<b>Ordem:</b> {idx}<br><b>Cliente:</b> {r['NOME FANTASIA']}<br>"
                     f"<b>Turno:</b> {turno}<br><b>Peso:</b> {r['PESO']}<br>"
                     f"<b>Faturamento:</b> R$ {r['FATURAMENTO']}")
@@ -155,7 +156,7 @@ legend = folium.Element(
     f'<b>Clientes totais:</b> {unique_markers}<br>' +
     f'<b>Faturamento total:</b> R$ {faturamento_total:.2f}<br>' +
     f'<b>Turnos:</b> ☀️ = Manhã , 🕒 = Diurno, ⚡ = Recebe até as 16h<br>' +
-    f'<b>Atualizado:</b> {pd.Timestamp.today().strftime("%d/%m/%Y")}<br><br>' +
+    f'<b>Atualizado:</b>MAPA DIA 22<br><br>' +
     ''.join([
         f"<div style='display:flex;align-items:center;margin-bottom:5px;'>"
         f"<div style='width:15px;height:15px;background:{truck_colors.get(row['MOTORISTA'], 'gray')};"
@@ -170,5 +171,5 @@ legend = folium.Element(
 mapa.get_root().html.add_child(legend)
 
 # Salva mapa final
-mapa.save('mapaRetorno.html')
+mapa.save('mapa.html')
 print('Mapa reprocessado com priorização dinâmica e TSP ajustado.')

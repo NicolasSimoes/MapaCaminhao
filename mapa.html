@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f93d48d24d667016da161a582ea5a460 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    <div style="position:fixed;bottom:50px;left:50px;width:300px;background:white;border:2px solid grey;z-index:9999;padding:10px;box-shadow:2px 2px 5px rgba(0,0,0,0.3)"><b>Clientes totais:</b> 35<br><b>Faturamento total:</b> R$ 33101.79<br><b>Turnos:</b> ☀️ = Manhã , 🕒 = Diurno, ⚡ = Recebe até as 16h<br><b>Atualizado:</b>MAPA DIA 22<br><br><div style='display:flex;align-items:center;margin-bottom:5px;'><div style='width:15px;height:15px;background:darkred;border-radius:50%;margin-right:8px;'></div><b>AGENDAMENTO - BARATÃO</b>: R$ 1770.09 / Uso: 4%</div><div style='display:flex;align-items:center;margin-bottom:5px;'><div style='width:15px;height:15px;background:red;border-radius:50%;margin-right:8px;'></div><b>EDSON</b>: R$ 2861.97 / Uso: 12%</div><div style='display:flex;align-items:center;margin-bottom:5px;'><div style='width:15px;height:15px;background:orange;border-radius:50%;margin-right:8px;'></div><b>FELIX</b>: R$ 11814.01 / Uso: 66%</div><div style='display:flex;align-items:center;margin-bottom:5px;'><div style='width:15px;height:15px;background:blue;border-radius:50%;margin-right:8px;'></div><b>LUAN</b>: R$ 6156.68 / Uso: 15%</div><div style='display:flex;align-items:center;margin-bottom:5px;'><div style='width:15px;height:15px;background:green;border-radius:50%;margin-right:8px;'></div><b>ROBERTO</b>: R$ 7263.69 / Uso: 45%</div><div style='display:flex;align-items:center;margin-bottom:5px;'><div style='width:15px;height:15px;background:purple;border-radius:50%;margin-right:8px;'></div><b>WEMINSON</b>: R$ 3235.35 / Uso: 14%</div></div>
+    
+            <div class="folium-map" id="map_f93d48d24d667016da161a582ea5a460" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f93d48d24d667016da161a582ea5a460 = L.map(
+                "map_f93d48d24d667016da161a582ea5a460",
+                {
+                    center: [-3.7572635398641006, -38.5854081195323],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d8652a08393e07bcdb0b3d640d187573 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d8652a08393e07bcdb0b3d640d187573.addTo(map_f93d48d24d667016da161a582ea5a460);
+        
+    
+            var feature_group_b33e901bf7bb65c7d89e78a415310a1c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_eb6a357a2a5192ef82f5f0236e659b22 = L.marker(
+                [-3.7572635398641, -38.5854081195323],
+                {
+}
+            ).addTo(feature_group_b33e901bf7bb65c7d89e78a415310a1c);
+        
+    
+            var icon_ead6a924c3a6155662795bc0c049b171 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b88e92a2594785fb8372da07d728e2b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_521bf0e70c8076d35772d9ea842d772b = $(`<div id="html_521bf0e70c8076d35772d9ea842d772b" style="width: 100.0%; height: 100.0%;">VALEMILK-CD</div>`)[0];
+                popup_b88e92a2594785fb8372da07d728e2b4.setContent(html_521bf0e70c8076d35772d9ea842d772b);
+            
+        
+
+        marker_eb6a357a2a5192ef82f5f0236e659b22.bindPopup(popup_b88e92a2594785fb8372da07d728e2b4)
+        ;
+
+        
+    
+    
+                marker_eb6a357a2a5192ef82f5f0236e659b22.setIcon(icon_ead6a924c3a6155662795bc0c049b171);
+            
+    
+            var poly_line_c6611cd8e4c1e53e39acc79d041cad00 = L.polyline(
+                [[-3.7572635398641, -38.5854081195323], [-3.7086442, -38.563186]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_b33e901bf7bb65c7d89e78a415310a1c);
+        
+    
+            var marker_da8acd7e323dbb658fb262b4f6828293 = L.marker(
+                [-3.7086442, -38.563186],
+                {
+}
+            ).addTo(feature_group_b33e901bf7bb65c7d89e78a415310a1c);
+        
+    
+            var div_icon_f79b1e8930a0130388187ce9af1630ed = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:darkred;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e1\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_da8acd7e323dbb658fb262b4f6828293.setIcon(div_icon_f79b1e8930a0130388187ce9af1630ed);
+        
+    
+        var popup_10471509baa8bcb5fd98bd9b24edd975 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1cb1146f859df499a9774c02b1567d00 = $(`<div id="html_1cb1146f859df499a9774c02b1567d00" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  AGENDAMENTO - BARATÃO<br><b>Placa:</b>  OSH4598<br><b>Ordem:</b> 1<br><b>Cliente:</b> BARATAO - ALVARO WEYNE<br><b>Turno:</b> MANHA<br><b>Peso:</b> 18.5<br><b>Faturamento:</b> R$ 449.4</div>`)[0];
+                popup_10471509baa8bcb5fd98bd9b24edd975.setContent(html_1cb1146f859df499a9774c02b1567d00);
+            
+        
+
+        marker_da8acd7e323dbb658fb262b4f6828293.bindPopup(popup_10471509baa8bcb5fd98bd9b24edd975)
+        ;
+
+        
+    
+    
+            marker_da8acd7e323dbb658fb262b4f6828293.bindTooltip(
+                `<div>
+                     1 - BARATAO - ALVARO WEYNE (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_da8acd7e323dbb658fb262b4f6828293.setIcon(div_icon_f79b1e8930a0130388187ce9af1630ed);
+            
+    
+            var poly_line_519e7e5a2cf56da3a3e2764d22faae8a = L.polyline(
+                [[-3.7086442, -38.563186], [-3.817788, -38.589921]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_b33e901bf7bb65c7d89e78a415310a1c);
+        
+    
+            var marker_05ad69b7efec5c9a9fdbcd3dd1bcc7ac = L.marker(
+                [-3.817788, -38.589921],
+                {
+}
+            ).addTo(feature_group_b33e901bf7bb65c7d89e78a415310a1c);
+        
+    
+            var div_icon_d783bdfe687627dd2e98250c5b1dc1ce = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:darkred;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e2\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_05ad69b7efec5c9a9fdbcd3dd1bcc7ac.setIcon(div_icon_d783bdfe687627dd2e98250c5b1dc1ce);
+        
+    
+        var popup_cad1d29c6aac3efc116e01fa29b0e998 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89db6091a9c2c50f010f83175217874f = $(`<div id="html_89db6091a9c2c50f010f83175217874f" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  AGENDAMENTO - BARATÃO<br><b>Placa:</b>  OSH4598<br><b>Ordem:</b> 2<br><b>Cliente:</b> BARATAO - CONJ ESPERANÇA<br><b>Turno:</b> MANHA<br><b>Peso:</b> 29.2<br><b>Faturamento:</b> R$ 916.44</div>`)[0];
+                popup_cad1d29c6aac3efc116e01fa29b0e998.setContent(html_89db6091a9c2c50f010f83175217874f);
+            
+        
+
+        marker_05ad69b7efec5c9a9fdbcd3dd1bcc7ac.bindPopup(popup_cad1d29c6aac3efc116e01fa29b0e998)
+        ;
+
+        
+    
+    
+            marker_05ad69b7efec5c9a9fdbcd3dd1bcc7ac.bindTooltip(
+                `<div>
+                     2 - BARATAO - CONJ ESPERANÇA (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_05ad69b7efec5c9a9fdbcd3dd1bcc7ac.setIcon(div_icon_d783bdfe687627dd2e98250c5b1dc1ce);
+            
+    
+            var poly_line_6b836785f245f66b089b21716a322d83 = L.polyline(
+                [[-3.817788, -38.589921], [-3.8143736, -38.6120921]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_b33e901bf7bb65c7d89e78a415310a1c);
+        
+    
+            var marker_7df5a67c582c0dbfcf12a536396f6e2a = L.marker(
+                [-3.8143736, -38.6120921],
+                {
+}
+            ).addTo(feature_group_b33e901bf7bb65c7d89e78a415310a1c);
+        
+    
+            var div_icon_cc9c32ec0b58d0f01d46cca929c06b18 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:darkred;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e3\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_7df5a67c582c0dbfcf12a536396f6e2a.setIcon(div_icon_cc9c32ec0b58d0f01d46cca929c06b18);
+        
+    
+        var popup_d99a95416066e3344fa32bed790d2846 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f4458465e15cacf52cda1d0f8402c4bb = $(`<div id="html_f4458465e15cacf52cda1d0f8402c4bb" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  AGENDAMENTO - BARATÃO<br><b>Placa:</b>  OSH4598<br><b>Ordem:</b> 3<br><b>Cliente:</b> BARATAO - SIQUEIRA<br><b>Turno:</b> MANHA<br><b>Peso:</b> 17.5<br><b>Faturamento:</b> R$ 404.25</div>`)[0];
+                popup_d99a95416066e3344fa32bed790d2846.setContent(html_f4458465e15cacf52cda1d0f8402c4bb);
+            
+        
+
+        marker_7df5a67c582c0dbfcf12a536396f6e2a.bindPopup(popup_d99a95416066e3344fa32bed790d2846)
+        ;
+
+        
+    
+    
+            marker_7df5a67c582c0dbfcf12a536396f6e2a.bindTooltip(
+                `<div>
+                     3 - BARATAO - SIQUEIRA (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7df5a67c582c0dbfcf12a536396f6e2a.setIcon(div_icon_cc9c32ec0b58d0f01d46cca929c06b18);
+            
+    
+            feature_group_b33e901bf7bb65c7d89e78a415310a1c.addTo(map_f93d48d24d667016da161a582ea5a460);
+        
+    
+            var feature_group_5266f42b437122c44a6965d575e1b14f = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_7cc7c4f11b2ae6da0c98571d459c9877 = L.marker(
+                [-3.7572635398641, -38.5854081195323],
+                {
+}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var icon_495226aa845bb0308df417b137cf0ad4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50bd07573056ec808ba84303f0a35de9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fafcdf2070e2c385372c9f408165a65a = $(`<div id="html_fafcdf2070e2c385372c9f408165a65a" style="width: 100.0%; height: 100.0%;">VALEMILK-CD</div>`)[0];
+                popup_50bd07573056ec808ba84303f0a35de9.setContent(html_fafcdf2070e2c385372c9f408165a65a);
+            
+        
+
+        marker_7cc7c4f11b2ae6da0c98571d459c9877.bindPopup(popup_50bd07573056ec808ba84303f0a35de9)
+        ;
+
+        
+    
+    
+                marker_7cc7c4f11b2ae6da0c98571d459c9877.setIcon(icon_495226aa845bb0308df417b137cf0ad4);
+            
+    
+            var poly_line_b084da9fd87e38031310b04a110a6701 = L.polyline(
+                [[-3.7572635398641, -38.5854081195323], [-3.7429477, -38.5599157]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var marker_2ed2f4b44d91b086591c40796d0d0671 = L.marker(
+                [-3.7429477, -38.5599157],
+                {
+}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var div_icon_8cb3d0852075ca728b4eb62ee329ddb3 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:red;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e1\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_2ed2f4b44d91b086591c40796d0d0671.setIcon(div_icon_8cb3d0852075ca728b4eb62ee329ddb3);
+        
+    
+        var popup_4dc23191083b8d6485fa71c6a34395e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2e4a78246c3b4f57f544573242536e6 = $(`<div id="html_e2e4a78246c3b4f57f544573242536e6" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  EDSON<br><b>Placa:</b>  PNP4654<br><b>Ordem:</b> 1<br><b>Cliente:</b> CENTERBOX - PARQUELANDIA<br><b>Turno:</b> MANHA<br><b>Peso:</b> 18.1<br><b>Faturamento:</b> R$ 493.57</div>`)[0];
+                popup_4dc23191083b8d6485fa71c6a34395e6.setContent(html_e2e4a78246c3b4f57f544573242536e6);
+            
+        
+
+        marker_2ed2f4b44d91b086591c40796d0d0671.bindPopup(popup_4dc23191083b8d6485fa71c6a34395e6)
+        ;
+
+        
+    
+    
+            marker_2ed2f4b44d91b086591c40796d0d0671.bindTooltip(
+                `<div>
+                     1 - CENTERBOX - PARQUELANDIA (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2ed2f4b44d91b086591c40796d0d0671.setIcon(div_icon_8cb3d0852075ca728b4eb62ee329ddb3);
+            
+    
+            var poly_line_800f1d0b6dd5dba2edc03d1abb1d5dbe = L.polyline(
+                [[-3.7429477, -38.5599157], [-3.7135362, -38.5885703]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var marker_dacefde3bd1e0726afe1812f0391d2ee = L.marker(
+                [-3.7135362, -38.5885703],
+                {
+}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var div_icon_a0b8ac417cfe9dafe6897439a904d7dc = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:red;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e2\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_dacefde3bd1e0726afe1812f0391d2ee.setIcon(div_icon_a0b8ac417cfe9dafe6897439a904d7dc);
+        
+    
+        var popup_a9d854e85a5f24a797fac92d7d77d473 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e39ce7d0fa9e2edf3d50aeb95b863ab6 = $(`<div id="html_e39ce7d0fa9e2edf3d50aeb95b863ab6" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  EDSON<br><b>Placa:</b>  PNP4654<br><b>Ordem:</b> 2<br><b>Cliente:</b> CENTERBOX - CEL CARVALHO<br><b>Turno:</b> MANHA<br><b>Peso:</b> 18.2<br><b>Faturamento:</b> R$ 535.55</div>`)[0];
+                popup_a9d854e85a5f24a797fac92d7d77d473.setContent(html_e39ce7d0fa9e2edf3d50aeb95b863ab6);
+            
+        
+
+        marker_dacefde3bd1e0726afe1812f0391d2ee.bindPopup(popup_a9d854e85a5f24a797fac92d7d77d473)
+        ;
+
+        
+    
+    
+            marker_dacefde3bd1e0726afe1812f0391d2ee.bindTooltip(
+                `<div>
+                     2 - CENTERBOX - CEL CARVALHO (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dacefde3bd1e0726afe1812f0391d2ee.setIcon(div_icon_a0b8ac417cfe9dafe6897439a904d7dc);
+            
+    
+            var poly_line_82c91344df3d800b36d68d96e3fb537c = L.polyline(
+                [[-3.7135362, -38.5885703], [-3.7249377, -38.5890115]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var marker_4953b07f45bfc1f37681c31222de4c74 = L.marker(
+                [-3.7249377, -38.5890115],
+                {
+}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var div_icon_dd94f4e52f44848d0acfe2b4bb08e856 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:red;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e3\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_4953b07f45bfc1f37681c31222de4c74.setIcon(div_icon_dd94f4e52f44848d0acfe2b4bb08e856);
+        
+    
+        var popup_9351a4698f30fcc7db920a2171cf6d89 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d4fa476b20b87ba3ada4bfaeed52b9d6 = $(`<div id="html_d4fa476b20b87ba3ada4bfaeed52b9d6" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  EDSON<br><b>Placa:</b>  PNP4654<br><b>Ordem:</b> 3<br><b>Cliente:</b> SANTA EDWIGES - JD GUANABARA - LJ 01<br><b>Turno:</b> MANHA<br><b>Peso:</b> 70.4<br><b>Faturamento:</b> R$ 1071.75</div>`)[0];
+                popup_9351a4698f30fcc7db920a2171cf6d89.setContent(html_d4fa476b20b87ba3ada4bfaeed52b9d6);
+            
+        
+
+        marker_4953b07f45bfc1f37681c31222de4c74.bindPopup(popup_9351a4698f30fcc7db920a2171cf6d89)
+        ;
+
+        
+    
+    
+            marker_4953b07f45bfc1f37681c31222de4c74.bindTooltip(
+                `<div>
+                     3 - SANTA EDWIGES - JD GUANABARA - LJ 01 (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4953b07f45bfc1f37681c31222de4c74.setIcon(div_icon_dd94f4e52f44848d0acfe2b4bb08e856);
+            
+    
+            var poly_line_0ec256d8d66577591e2ebf4326034546 = L.polyline(
+                [[-3.7249377, -38.5890115], [-3.7328394, -38.5998675]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var marker_d98445e4ed3a7367a0e2ad546d139924 = L.marker(
+                [-3.7328394, -38.5998675],
+                {
+}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var div_icon_68bc8387aa7194017b66bca8ad7c6d7f = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:red;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e4\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_d98445e4ed3a7367a0e2ad546d139924.setIcon(div_icon_68bc8387aa7194017b66bca8ad7c6d7f);
+        
+    
+        var popup_618f98953a59a6bda6c5155e7508cd26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2b723d2dd9c783d94749693a899d604 = $(`<div id="html_e2b723d2dd9c783d94749693a899d604" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  EDSON<br><b>Placa:</b>  PNP4654<br><b>Ordem:</b> 4<br><b>Cliente:</b> MERCADINHO BATISTA<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 23.8<br><b>Faturamento:</b> R$ 200.6</div>`)[0];
+                popup_618f98953a59a6bda6c5155e7508cd26.setContent(html_e2b723d2dd9c783d94749693a899d604);
+            
+        
+
+        marker_d98445e4ed3a7367a0e2ad546d139924.bindPopup(popup_618f98953a59a6bda6c5155e7508cd26)
+        ;
+
+        
+    
+    
+            marker_d98445e4ed3a7367a0e2ad546d139924.bindTooltip(
+                `<div>
+                     4 - MERCADINHO BATISTA (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d98445e4ed3a7367a0e2ad546d139924.setIcon(div_icon_68bc8387aa7194017b66bca8ad7c6d7f);
+            
+    
+            var poly_line_86e20c9c21fabf2bfa0f6bee4de9665e = L.polyline(
+                [[-3.7328394, -38.5998675], [-3.7188623, -38.6057626]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var marker_bfc1db320693017f555316cc6fdd0603 = L.marker(
+                [-3.7188623, -38.6057626],
+                {
+}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var div_icon_4c862d47cb3cb1404cf64650c6899151 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:red;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e5\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_bfc1db320693017f555316cc6fdd0603.setIcon(div_icon_4c862d47cb3cb1404cf64650c6899151);
+        
+    
+        var popup_6639a3584d610a7471b21106b5d006c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_268a22031864a037f41ef6cb3267906f = $(`<div id="html_268a22031864a037f41ef6cb3267906f" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  EDSON<br><b>Placa:</b>  PNP4654<br><b>Ordem:</b> 5<br><b>Cliente:</b> MERCANTIL AZEVEDO<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 33.8<br><b>Faturamento:</b> R$ 325.4</div>`)[0];
+                popup_6639a3584d610a7471b21106b5d006c4.setContent(html_268a22031864a037f41ef6cb3267906f);
+            
+        
+
+        marker_bfc1db320693017f555316cc6fdd0603.bindPopup(popup_6639a3584d610a7471b21106b5d006c4)
+        ;
+
+        
+    
+    
+            marker_bfc1db320693017f555316cc6fdd0603.bindTooltip(
+                `<div>
+                     5 - MERCANTIL AZEVEDO (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bfc1db320693017f555316cc6fdd0603.setIcon(div_icon_4c862d47cb3cb1404cf64650c6899151);
+            
+    
+            var poly_line_4da928fd19f379a1b3d57da3fb2f8006 = L.polyline(
+                [[-3.7188623, -38.6057626], [-3.7133513, -38.6029616]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var marker_58f30b8a0667f0f8aa2be2081d548a17 = L.marker(
+                [-3.7133513, -38.6029616],
+                {
+}
+            ).addTo(feature_group_5266f42b437122c44a6965d575e1b14f);
+        
+    
+            var div_icon_c2712976b6032d4cc57c6a277d6af137 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:red;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e6\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_58f30b8a0667f0f8aa2be2081d548a17.setIcon(div_icon_c2712976b6032d4cc57c6a277d6af137);
+        
+    
+        var popup_36470aa305c282cc9a419786141a313f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ba61462e3b96708280e9c2babf02ad8 = $(`<div id="html_1ba61462e3b96708280e9c2babf02ad8" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  EDSON<br><b>Placa:</b>  PNP4654<br><b>Ordem:</b> 6<br><b>Cliente:</b> MERCADINHO VERA<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 19.7<br><b>Faturamento:</b> R$ 235.1</div>`)[0];
+                popup_36470aa305c282cc9a419786141a313f.setContent(html_1ba61462e3b96708280e9c2babf02ad8);
+            
+        
+
+        marker_58f30b8a0667f0f8aa2be2081d548a17.bindPopup(popup_36470aa305c282cc9a419786141a313f)
+        ;
+
+        
+    
+    
+            marker_58f30b8a0667f0f8aa2be2081d548a17.bindTooltip(
+                `<div>
+                     6 - MERCADINHO VERA (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_58f30b8a0667f0f8aa2be2081d548a17.setIcon(div_icon_c2712976b6032d4cc57c6a277d6af137);
+            
+    
+            feature_group_5266f42b437122c44a6965d575e1b14f.addTo(map_f93d48d24d667016da161a582ea5a460);
+        
+    
+            var feature_group_f2f798bce600200504d42686b1b14754 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_005e8d77dc87bdc4648099decfd68ab3 = L.marker(
+                [-3.7572635398641, -38.5854081195323],
+                {
+}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var icon_29891adc15dd96ece5687e4f71749a08 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7ffcc341852034c214fc26906b050b9e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99def32840f9db90be3cfda80658de87 = $(`<div id="html_99def32840f9db90be3cfda80658de87" style="width: 100.0%; height: 100.0%;">VALEMILK-CD</div>`)[0];
+                popup_7ffcc341852034c214fc26906b050b9e.setContent(html_99def32840f9db90be3cfda80658de87);
+            
+        
+
+        marker_005e8d77dc87bdc4648099decfd68ab3.bindPopup(popup_7ffcc341852034c214fc26906b050b9e)
+        ;
+
+        
+    
+    
+                marker_005e8d77dc87bdc4648099decfd68ab3.setIcon(icon_29891adc15dd96ece5687e4f71749a08);
+            
+    
+            var poly_line_9dfa2c5e49772e9b5c3097d3cca0d0c5 = L.polyline(
+                [[-3.7572635398641, -38.5854081195323], [-3.806077, -38.5966382]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var marker_99aad552eb5908c523eb53e9fa193de6 = L.marker(
+                [-3.806077, -38.5966382],
+                {
+}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var div_icon_2ef04b40b4781bf6c6df89d60aae9843 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:orange;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e1\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_99aad552eb5908c523eb53e9fa193de6.setIcon(div_icon_2ef04b40b4781bf6c6df89d60aae9843);
+        
+    
+        var popup_a1639f133a59e3244f2907a01ebf1309 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb2a52c63ea46b2868fe74347d9c5424 = $(`<div id="html_cb2a52c63ea46b2868fe74347d9c5424" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  FELIX<br><b>Placa:</b>  OCB9225<br><b>Ordem:</b> 1<br><b>Cliente:</b> CLAECK SUPERMERCADO - PRQ JERUSALEM<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 165.1<br><b>Faturamento:</b> R$ 921.2</div>`)[0];
+                popup_a1639f133a59e3244f2907a01ebf1309.setContent(html_cb2a52c63ea46b2868fe74347d9c5424);
+            
+        
+
+        marker_99aad552eb5908c523eb53e9fa193de6.bindPopup(popup_a1639f133a59e3244f2907a01ebf1309)
+        ;
+
+        
+    
+    
+            marker_99aad552eb5908c523eb53e9fa193de6.bindTooltip(
+                `<div>
+                     1 - CLAECK SUPERMERCADO - PRQ JERUSALEM (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_99aad552eb5908c523eb53e9fa193de6.setIcon(div_icon_2ef04b40b4781bf6c6df89d60aae9843);
+            
+    
+            var poly_line_81eb02079367eafd60237656a4f31caa = L.polyline(
+                [[-3.806077, -38.5966382], [-3.81534018, -38.60506827]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var marker_0564bf974c46a6cf323fbd5ef2b44f7c = L.marker(
+                [-3.81534018, -38.60506827],
+                {
+}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var div_icon_d9b5ea3c30beaea3f9caa056294a7141 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:orange;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e2\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_0564bf974c46a6cf323fbd5ef2b44f7c.setIcon(div_icon_d9b5ea3c30beaea3f9caa056294a7141);
+        
+    
+        var popup_30ee2d210d8035860933b9d9a8e05084 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50213e599d3473a870072c2cc5e99d23 = $(`<div id="html_50213e599d3473a870072c2cc5e99d23" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  FELIX<br><b>Placa:</b>  OCB9225<br><b>Ordem:</b> 2<br><b>Cliente:</b> CLAECK SUPERMERCADO - JARDIM FLUMINENSE<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 144.4<br><b>Faturamento:</b> R$ 860.0</div>`)[0];
+                popup_30ee2d210d8035860933b9d9a8e05084.setContent(html_50213e599d3473a870072c2cc5e99d23);
+            
+        
+
+        marker_0564bf974c46a6cf323fbd5ef2b44f7c.bindPopup(popup_30ee2d210d8035860933b9d9a8e05084)
+        ;
+
+        
+    
+    
+            marker_0564bf974c46a6cf323fbd5ef2b44f7c.bindTooltip(
+                `<div>
+                     2 - CLAECK SUPERMERCADO - JARDIM FLUMINENSE (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0564bf974c46a6cf323fbd5ef2b44f7c.setIcon(div_icon_d9b5ea3c30beaea3f9caa056294a7141);
+            
+    
+            var poly_line_41a1764622a1f0a8a7780739c7fbe48b = L.polyline(
+                [[-3.81534018, -38.60506827], [-3.8142935, -38.5831318]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var marker_d0e9c3a12fff9b691edb0c6762744344 = L.marker(
+                [-3.8142935, -38.5831318],
+                {
+}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var div_icon_6b6e1b73c487566d8bdb97a715cccbe5 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:orange;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e3\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_d0e9c3a12fff9b691edb0c6762744344.setIcon(div_icon_6b6e1b73c487566d8bdb97a715cccbe5);
+        
+    
+        var popup_0b5aa4e6bdc7df9990d3df9a08cfd9b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11c355d76f03a7497d0702048c778996 = $(`<div id="html_11c355d76f03a7497d0702048c778996" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  FELIX<br><b>Placa:</b>  OCB9225<br><b>Ordem:</b> 3<br><b>Cliente:</b> CLAECK SUPERMERCADO - PRQ SANTANA<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 344.9<br><b>Faturamento:</b> R$ 1948.4</div>`)[0];
+                popup_0b5aa4e6bdc7df9990d3df9a08cfd9b8.setContent(html_11c355d76f03a7497d0702048c778996);
+            
+        
+
+        marker_d0e9c3a12fff9b691edb0c6762744344.bindPopup(popup_0b5aa4e6bdc7df9990d3df9a08cfd9b8)
+        ;
+
+        
+    
+    
+            marker_d0e9c3a12fff9b691edb0c6762744344.bindTooltip(
+                `<div>
+                     3 - CLAECK SUPERMERCADO - PRQ SANTANA (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0e9c3a12fff9b691edb0c6762744344.setIcon(div_icon_6b6e1b73c487566d8bdb97a715cccbe5);
+            
+    
+            var poly_line_3298e1a75f8e7580b9b838f4f95f5615 = L.polyline(
+                [[-3.8142935, -38.5831318], [-3.8195737, -38.5661298]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var marker_0175cc21a3f6353a63a31222d5e65257 = L.marker(
+                [-3.8195737, -38.5661298],
+                {
+}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var div_icon_79fcda60094ef962fe22cbbfb39b831e = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:orange;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e4\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_0175cc21a3f6353a63a31222d5e65257.setIcon(div_icon_79fcda60094ef962fe22cbbfb39b831e);
+        
+    
+        var popup_f6fb60f10f6cea6cadedf146f9f2a439 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1ed84c7ec7b7c81c0da1a481dc07e57 = $(`<div id="html_a1ed84c7ec7b7c81c0da1a481dc07e57" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  FELIX<br><b>Placa:</b>  OCB9225<br><b>Ordem:</b> 4<br><b>Cliente:</b> RABELO SUPERMERCADO<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 14.6<br><b>Faturamento:</b> R$ 344.64</div>`)[0];
+                popup_f6fb60f10f6cea6cadedf146f9f2a439.setContent(html_a1ed84c7ec7b7c81c0da1a481dc07e57);
+            
+        
+
+        marker_0175cc21a3f6353a63a31222d5e65257.bindPopup(popup_f6fb60f10f6cea6cadedf146f9f2a439)
+        ;
+
+        
+    
+    
+            marker_0175cc21a3f6353a63a31222d5e65257.bindTooltip(
+                `<div>
+                     4 - RABELO SUPERMERCADO (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0175cc21a3f6353a63a31222d5e65257.setIcon(div_icon_79fcda60094ef962fe22cbbfb39b831e);
+            
+    
+            var poly_line_f64b02bd0229e75bd8fa0d9a31458254 = L.polyline(
+                [[-3.8195737, -38.5661298], [-3.8246733, -38.5192122]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var marker_a615a3973d71edf5fcb8320e422e8b11 = L.marker(
+                [-3.8246733, -38.5192122],
+                {
+}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var div_icon_ded75db2812e327534a5d5a08fc0e4e4 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:orange;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e5\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_a615a3973d71edf5fcb8320e422e8b11.setIcon(div_icon_ded75db2812e327534a5d5a08fc0e4e4);
+        
+    
+        var popup_1e48e48c1b889b51d1639b40cdbe6f72 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51f589248308f7659c4fcd7fe734bb0a = $(`<div id="html_51f589248308f7659c4fcd7fe734bb0a" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  FELIX<br><b>Placa:</b>  OCB9225<br><b>Ordem:</b> 5<br><b>Cliente:</b> SUPERMERCADO ISRAEL - LJ 06<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 58.2<br><b>Faturamento:</b> R$ 839.4</div>`)[0];
+                popup_1e48e48c1b889b51d1639b40cdbe6f72.setContent(html_51f589248308f7659c4fcd7fe734bb0a);
+            
+        
+
+        marker_a615a3973d71edf5fcb8320e422e8b11.bindPopup(popup_1e48e48c1b889b51d1639b40cdbe6f72)
+        ;
+
+        
+    
+    
+            marker_a615a3973d71edf5fcb8320e422e8b11.bindTooltip(
+                `<div>
+                     5 - SUPERMERCADO ISRAEL - LJ 06 (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a615a3973d71edf5fcb8320e422e8b11.setIcon(div_icon_ded75db2812e327534a5d5a08fc0e4e4);
+            
+    
+            var poly_line_654aa5c2ff1142c21f3a95a63b58cc71 = L.polyline(
+                [[-3.8246733, -38.5192122], [-3.8795207, -38.4613795]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var marker_31dd568aa7ab30343be24ac247868ad5 = L.marker(
+                [-3.8795207, -38.4613795],
+                {
+}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var div_icon_65a5b2857aa73a36207b5cac73c7bc94 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:orange;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e6\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_31dd568aa7ab30343be24ac247868ad5.setIcon(div_icon_65a5b2857aa73a36207b5cac73c7bc94);
+        
+    
+        var popup_852adb3e933b24caba2f939ee5db82a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f1f469dafc08641ff317f62e836d25a = $(`<div id="html_5f1f469dafc08641ff317f62e836d25a" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  FELIX<br><b>Placa:</b>  OCB9225<br><b>Ordem:</b> 6<br><b>Cliente:</b> COMETA (EUSEBIO)<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 307.6<br><b>Faturamento:</b> R$ 6618.72</div>`)[0];
+                popup_852adb3e933b24caba2f939ee5db82a4.setContent(html_5f1f469dafc08641ff317f62e836d25a);
+            
+        
+
+        marker_31dd568aa7ab30343be24ac247868ad5.bindPopup(popup_852adb3e933b24caba2f939ee5db82a4)
+        ;
+
+        
+    
+    
+            marker_31dd568aa7ab30343be24ac247868ad5.bindTooltip(
+                `<div>
+                     6 - COMETA (EUSEBIO) (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_31dd568aa7ab30343be24ac247868ad5.setIcon(div_icon_65a5b2857aa73a36207b5cac73c7bc94);
+            
+    
+            var poly_line_4f0e139108f3dfb9dceae6d7c9ca7cc7 = L.polyline(
+                [[-3.8795207, -38.4613795], [-3.7967961, -38.46483618]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var marker_99e057e79555c382816ff6b80a69c209 = L.marker(
+                [-3.7967961, -38.46483618],
+                {
+}
+            ).addTo(feature_group_f2f798bce600200504d42686b1b14754);
+        
+    
+            var div_icon_cafedfa8c95c38f0a2dc2b178c587347 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:orange;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e7\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_99e057e79555c382816ff6b80a69c209.setIcon(div_icon_cafedfa8c95c38f0a2dc2b178c587347);
+        
+    
+        var popup_98cec50cdf380a46f941c950f493ae4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86a40b55ae1a2e985e52fa38c40a5172 = $(`<div id="html_86a40b55ae1a2e985e52fa38c40a5172" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  FELIX<br><b>Placa:</b>  OCB9225<br><b>Ordem:</b> 7<br><b>Cliente:</b> MERCADINHO DA APARECIDA<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 21.1<br><b>Faturamento:</b> R$ 281.65</div>`)[0];
+                popup_98cec50cdf380a46f941c950f493ae4c.setContent(html_86a40b55ae1a2e985e52fa38c40a5172);
+            
+        
+
+        marker_99e057e79555c382816ff6b80a69c209.bindPopup(popup_98cec50cdf380a46f941c950f493ae4c)
+        ;
+
+        
+    
+    
+            marker_99e057e79555c382816ff6b80a69c209.bindTooltip(
+                `<div>
+                     7 - MERCADINHO DA APARECIDA (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_99e057e79555c382816ff6b80a69c209.setIcon(div_icon_cafedfa8c95c38f0a2dc2b178c587347);
+            
+    
+            feature_group_f2f798bce600200504d42686b1b14754.addTo(map_f93d48d24d667016da161a582ea5a460);
+        
+    
+            var feature_group_e2dd23d91d761c4d75463022f965db5c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_5fbdfdeccf42beea39e3e4acb3095f2a = L.marker(
+                [-3.7572635398641, -38.5854081195323],
+                {
+}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var icon_b1185b6a801aba86ff4c9eabdd98d968 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d92a802caf40c835af2efd68343c7502 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_891682a045a1896d544404040ce12d3c = $(`<div id="html_891682a045a1896d544404040ce12d3c" style="width: 100.0%; height: 100.0%;">VALEMILK-CD</div>`)[0];
+                popup_d92a802caf40c835af2efd68343c7502.setContent(html_891682a045a1896d544404040ce12d3c);
+            
+        
+
+        marker_5fbdfdeccf42beea39e3e4acb3095f2a.bindPopup(popup_d92a802caf40c835af2efd68343c7502)
+        ;
+
+        
+    
+    
+                marker_5fbdfdeccf42beea39e3e4acb3095f2a.setIcon(icon_b1185b6a801aba86ff4c9eabdd98d968);
+            
+    
+            var poly_line_4c76f0a9b265164afc4d2b0a60bac2b1 = L.polyline(
+                [[-3.7572635398641, -38.5854081195323], [-3.77289, -38.5882422]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var marker_038a36f1dee24569c56156fce4870939 = L.marker(
+                [-3.77289, -38.5882422],
+                {
+}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var div_icon_c94f8bbbc8c70846a98660f51c2c0a83 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:blue;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e1\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_038a36f1dee24569c56156fce4870939.setIcon(div_icon_c94f8bbbc8c70846a98660f51c2c0a83);
+        
+    
+        var popup_fa9a72594a54b841755aa670583af942 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63047885d76851662c1773f81a29897d = $(`<div id="html_63047885d76851662c1773f81a29897d" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  LUAN<br><b>Placa:</b>  OSH4598<br><b>Ordem:</b> 1<br><b>Cliente:</b> CENTERBOX - JOAO XXIII<br><b>Turno:</b> MANHA<br><b>Peso:</b> 5.7<br><b>Faturamento:</b> R$ 187.81</div>`)[0];
+                popup_fa9a72594a54b841755aa670583af942.setContent(html_63047885d76851662c1773f81a29897d);
+            
+        
+
+        marker_038a36f1dee24569c56156fce4870939.bindPopup(popup_fa9a72594a54b841755aa670583af942)
+        ;
+
+        
+    
+    
+            marker_038a36f1dee24569c56156fce4870939.bindTooltip(
+                `<div>
+                     1 - CENTERBOX - JOAO XXIII (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_038a36f1dee24569c56156fce4870939.setIcon(div_icon_c94f8bbbc8c70846a98660f51c2c0a83);
+            
+    
+            var poly_line_1391b0fc5f5b77e905380975955ecf0a = L.polyline(
+                [[-3.77289, -38.5882422], [-3.7440842, -38.4749343]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var marker_5b951eb5aa7e0c89e463751cb56911e4 = L.marker(
+                [-3.7440842, -38.4749343],
+                {
+}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var div_icon_7c87598d88c5d931ee97593a436ad096 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:blue;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e2\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_5b951eb5aa7e0c89e463751cb56911e4.setIcon(div_icon_7c87598d88c5d931ee97593a436ad096);
+        
+    
+        var popup_42d07de6c403feb11aed5fbc5a7e2db8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_296e94b03ce6928b7da253c8ace42b98 = $(`<div id="html_296e94b03ce6928b7da253c8ace42b98" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  LUAN<br><b>Placa:</b>  OSH4598<br><b>Ordem:</b> 2<br><b>Cliente:</b> CENTERBOX - SANTOS DUMONT<br><b>Turno:</b> MANHA<br><b>Peso:</b> 11.3<br><b>Faturamento:</b> R$ 294.87</div>`)[0];
+                popup_42d07de6c403feb11aed5fbc5a7e2db8.setContent(html_296e94b03ce6928b7da253c8ace42b98);
+            
+        
+
+        marker_5b951eb5aa7e0c89e463751cb56911e4.bindPopup(popup_42d07de6c403feb11aed5fbc5a7e2db8)
+        ;
+
+        
+    
+    
+            marker_5b951eb5aa7e0c89e463751cb56911e4.bindTooltip(
+                `<div>
+                     2 - CENTERBOX - SANTOS DUMONT (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5b951eb5aa7e0c89e463751cb56911e4.setIcon(div_icon_7c87598d88c5d931ee97593a436ad096);
+            
+    
+            var poly_line_5864c44d52fe033d09a0a901890bed7d = L.polyline(
+                [[-3.7440842, -38.4749343], [-3.7424091, -38.4867581]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var marker_44dcdab2ab0de2156da1228c7483b00b = L.marker(
+                [-3.7424091, -38.4867581],
+                {
+}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var div_icon_87e896512e7b0823d919aacff579fd5e = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:blue;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e3\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_44dcdab2ab0de2156da1228c7483b00b.setIcon(div_icon_87e896512e7b0823d919aacff579fd5e);
+        
+    
+        var popup_65b4dc7f2d5e156ceb5ac11793951f32 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3386da81bd0ba4258c45bcdba8f970c = $(`<div id="html_f3386da81bd0ba4258c45bcdba8f970c" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  LUAN<br><b>Placa:</b>  OSH4598<br><b>Ordem:</b> 3<br><b>Cliente:</b> CENTERBOX - CONCEITO<br><b>Turno:</b> MANHA<br><b>Peso:</b> 3.8<br><b>Faturamento:</b> R$ 147.74</div>`)[0];
+                popup_65b4dc7f2d5e156ceb5ac11793951f32.setContent(html_f3386da81bd0ba4258c45bcdba8f970c);
+            
+        
+
+        marker_44dcdab2ab0de2156da1228c7483b00b.bindPopup(popup_65b4dc7f2d5e156ceb5ac11793951f32)
+        ;
+
+        
+    
+    
+            marker_44dcdab2ab0de2156da1228c7483b00b.bindTooltip(
+                `<div>
+                     3 - CENTERBOX - CONCEITO (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_44dcdab2ab0de2156da1228c7483b00b.setIcon(div_icon_87e896512e7b0823d919aacff579fd5e);
+            
+    
+            var poly_line_9e3e2b9472f56b1027c5b30dce98dd81 = L.polyline(
+                [[-3.7424091, -38.4867581], [-3.7560405, -38.5114051]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var marker_96a7158844feb049e8e3c317511a9547 = L.marker(
+                [-3.7560405, -38.5114051],
+                {
+}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var div_icon_39b08c065661dc84285750a08ec22427 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:blue;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e4\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_96a7158844feb049e8e3c317511a9547.setIcon(div_icon_39b08c065661dc84285750a08ec22427);
+        
+    
+        var popup_2ef291cdf5ed5319610927ac6d7e2bd1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b20cac113cc2d1bd570b70d2a6647dfc = $(`<div id="html_b20cac113cc2d1bd570b70d2a6647dfc" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  LUAN<br><b>Placa:</b>  OSH4598<br><b>Ordem:</b> 4<br><b>Cliente:</b> SUPER PORTUGAL - TAUAPE<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 58.1<br><b>Faturamento:</b> R$ 1430.96</div>`)[0];
+                popup_2ef291cdf5ed5319610927ac6d7e2bd1.setContent(html_b20cac113cc2d1bd570b70d2a6647dfc);
+            
+        
+
+        marker_96a7158844feb049e8e3c317511a9547.bindPopup(popup_2ef291cdf5ed5319610927ac6d7e2bd1)
+        ;
+
+        
+    
+    
+            marker_96a7158844feb049e8e3c317511a9547.bindTooltip(
+                `<div>
+                     4 - SUPER PORTUGAL - TAUAPE (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_96a7158844feb049e8e3c317511a9547.setIcon(div_icon_39b08c065661dc84285750a08ec22427);
+            
+    
+            var poly_line_6cf1e3a47ad87d0ab132a1132239b28e = L.polyline(
+                [[-3.7560405, -38.5114051], [-3.7955137, -38.4901664]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var marker_31b2512b3cd59a9ec882aaed3d38fb5b = L.marker(
+                [-3.7955137, -38.4901664],
+                {
+}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var div_icon_abc63982024d03e01c28e10d378453b5 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:blue;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e5\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_31b2512b3cd59a9ec882aaed3d38fb5b.setIcon(div_icon_abc63982024d03e01c28e10d378453b5);
+        
+    
+        var popup_ac0bdbd6dec815ef62c4b3ba4477353d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c2ed1a5030128c14a519cc5599b9ab4 = $(`<div id="html_9c2ed1a5030128c14a519cc5599b9ab4" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  LUAN<br><b>Placa:</b>  OSH4598<br><b>Ordem:</b> 5<br><b>Cliente:</b> COMETA (OLIVEIRA PAIVA)<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 132.7<br><b>Faturamento:</b> R$ 3194.24</div>`)[0];
+                popup_ac0bdbd6dec815ef62c4b3ba4477353d.setContent(html_9c2ed1a5030128c14a519cc5599b9ab4);
+            
+        
+
+        marker_31b2512b3cd59a9ec882aaed3d38fb5b.bindPopup(popup_ac0bdbd6dec815ef62c4b3ba4477353d)
+        ;
+
+        
+    
+    
+            marker_31b2512b3cd59a9ec882aaed3d38fb5b.bindTooltip(
+                `<div>
+                     5 - COMETA (OLIVEIRA PAIVA) (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_31b2512b3cd59a9ec882aaed3d38fb5b.setIcon(div_icon_abc63982024d03e01c28e10d378453b5);
+            
+    
+            var poly_line_f4bdac269e2bec45ee0d25e73894d07c = L.polyline(
+                [[-3.7955137, -38.4901664], [-3.74863598, -38.51500582]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var marker_ea8625b2ccd8b8d610c0b8d0f2609240 = L.marker(
+                [-3.74863598, -38.51500582],
+                {
+}
+            ).addTo(feature_group_e2dd23d91d761c4d75463022f965db5c);
+        
+    
+            var div_icon_ac3e4e19a670d1f50b48754035e12c65 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:blue;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e6\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_ea8625b2ccd8b8d610c0b8d0f2609240.setIcon(div_icon_ac3e4e19a670d1f50b48754035e12c65);
+        
+    
+        var popup_9cd1333e461e4a8d5f87f852e98e2be1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2637bc2b847cadfc211171bb6e1e26a7 = $(`<div id="html_2637bc2b847cadfc211171bb6e1e26a7" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  LUAN<br><b>Placa:</b>  OSH4598<br><b>Ordem:</b> 6<br><b>Cliente:</b> SUPER PORTUGAL - JOAQUIM TAVORA<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 34.2<br><b>Faturamento:</b> R$ 901.06</div>`)[0];
+                popup_9cd1333e461e4a8d5f87f852e98e2be1.setContent(html_2637bc2b847cadfc211171bb6e1e26a7);
+            
+        
+
+        marker_ea8625b2ccd8b8d610c0b8d0f2609240.bindPopup(popup_9cd1333e461e4a8d5f87f852e98e2be1)
+        ;
+
+        
+    
+    
+            marker_ea8625b2ccd8b8d610c0b8d0f2609240.bindTooltip(
+                `<div>
+                     6 - SUPER PORTUGAL - JOAQUIM TAVORA (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea8625b2ccd8b8d610c0b8d0f2609240.setIcon(div_icon_ac3e4e19a670d1f50b48754035e12c65);
+            
+    
+            feature_group_e2dd23d91d761c4d75463022f965db5c.addTo(map_f93d48d24d667016da161a582ea5a460);
+        
+    
+            var feature_group_29e6b711ca957f577dbfc39b42b453bc = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_78dbe1b8a087e7de79bec04827f6ed3c = L.marker(
+                [-3.7572635398641, -38.5854081195323],
+                {
+}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var icon_46db2a867113ca417ba810f115d55fe0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_435b3e8bd4f1c60a3f0c608b67d9d6fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3064d00f58f9a7b7f29b65073c9a8543 = $(`<div id="html_3064d00f58f9a7b7f29b65073c9a8543" style="width: 100.0%; height: 100.0%;">VALEMILK-CD</div>`)[0];
+                popup_435b3e8bd4f1c60a3f0c608b67d9d6fe.setContent(html_3064d00f58f9a7b7f29b65073c9a8543);
+            
+        
+
+        marker_78dbe1b8a087e7de79bec04827f6ed3c.bindPopup(popup_435b3e8bd4f1c60a3f0c608b67d9d6fe)
+        ;
+
+        
+    
+    
+                marker_78dbe1b8a087e7de79bec04827f6ed3c.setIcon(icon_46db2a867113ca417ba810f115d55fe0);
+            
+    
+            var poly_line_ded9c0f2890f8b7416b32f3475a341fd = L.polyline(
+                [[-3.7572635398641, -38.5854081195323], [-3.8486247, -38.614286]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var marker_15bae7ebf89006ba5acae3dc669a27c8 = L.marker(
+                [-3.8486247, -38.614286],
+                {
+}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var div_icon_c87f643cddb889648461f2a8d19e8ac6 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:green;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e1\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_15bae7ebf89006ba5acae3dc669a27c8.setIcon(div_icon_c87f643cddb889648461f2a8d19e8ac6);
+        
+    
+        var popup_5803c3dffb82f5d624de824f4e285e39 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be42020b590489e92b7c111195dd5fff = $(`<div id="html_be42020b590489e92b7c111195dd5fff" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  ROBERTO<br><b>Placa:</b>  RIG8G48<br><b>Ordem:</b> 1<br><b>Cliente:</b> J AGUIAR<br><b>Turno:</b> MANHA<br><b>Peso:</b> 48.8<br><b>Faturamento:</b> R$ 656.6</div>`)[0];
+                popup_5803c3dffb82f5d624de824f4e285e39.setContent(html_be42020b590489e92b7c111195dd5fff);
+            
+        
+
+        marker_15bae7ebf89006ba5acae3dc669a27c8.bindPopup(popup_5803c3dffb82f5d624de824f4e285e39)
+        ;
+
+        
+    
+    
+            marker_15bae7ebf89006ba5acae3dc669a27c8.bindTooltip(
+                `<div>
+                     1 - J AGUIAR (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_15bae7ebf89006ba5acae3dc669a27c8.setIcon(div_icon_c87f643cddb889648461f2a8d19e8ac6);
+            
+    
+            var poly_line_938f5895852bf55db10f242f62d5fccb = L.polyline(
+                [[-3.8486247, -38.614286], [-3.866484, -38.591203]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var marker_19e3c55149e91227b2c85521a743f00f = L.marker(
+                [-3.866484, -38.591203],
+                {
+}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var div_icon_b2949a79ae89aef47cf0be5fc732d78b = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:green;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e2\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_19e3c55149e91227b2c85521a743f00f.setIcon(div_icon_b2949a79ae89aef47cf0be5fc732d78b);
+        
+    
+        var popup_1aec8eadb3df6b149c7c0ef3bb586679 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd1547a16b15c885f0894bb592f90411 = $(`<div id="html_cd1547a16b15c885f0894bb592f90411" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  ROBERTO<br><b>Placa:</b>  RIG8G48<br><b>Ordem:</b> 2<br><b>Cliente:</b> COMERCIAL NO PREÇO<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 54.8<br><b>Faturamento:</b> R$ 806.0</div>`)[0];
+                popup_1aec8eadb3df6b149c7c0ef3bb586679.setContent(html_cd1547a16b15c885f0894bb592f90411);
+            
+        
+
+        marker_19e3c55149e91227b2c85521a743f00f.bindPopup(popup_1aec8eadb3df6b149c7c0ef3bb586679)
+        ;
+
+        
+    
+    
+            marker_19e3c55149e91227b2c85521a743f00f.bindTooltip(
+                `<div>
+                     2 - COMERCIAL NO PREÇO (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_19e3c55149e91227b2c85521a743f00f.setIcon(div_icon_b2949a79ae89aef47cf0be5fc732d78b);
+            
+    
+            var poly_line_c65d5064fc6235f1ba13db86bc4d095c = L.polyline(
+                [[-3.866484, -38.591203], [-3.8891567, -38.6108356]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var marker_6b2fdf9af0419c0b00aa1cbc242012d8 = L.marker(
+                [-3.8891567, -38.6108356],
+                {
+}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var div_icon_a1f42cf48a812cb3aec3764a04570557 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:green;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e3\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_6b2fdf9af0419c0b00aa1cbc242012d8.setIcon(div_icon_a1f42cf48a812cb3aec3764a04570557);
+        
+    
+        var popup_850217bc340b649f2257943eb0ed5c5c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b04d258449943170452903833396438 = $(`<div id="html_6b04d258449943170452903833396438" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  ROBERTO<br><b>Placa:</b>  RIG8G48<br><b>Ordem:</b> 3<br><b>Cliente:</b> UNICOMPRAS - LJ 01<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 201.6<br><b>Faturamento:</b> R$ 1836.6</div>`)[0];
+                popup_850217bc340b649f2257943eb0ed5c5c.setContent(html_6b04d258449943170452903833396438);
+            
+        
+
+        marker_6b2fdf9af0419c0b00aa1cbc242012d8.bindPopup(popup_850217bc340b649f2257943eb0ed5c5c)
+        ;
+
+        
+    
+    
+            marker_6b2fdf9af0419c0b00aa1cbc242012d8.bindTooltip(
+                `<div>
+                     3 - UNICOMPRAS - LJ 01 (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6b2fdf9af0419c0b00aa1cbc242012d8.setIcon(div_icon_a1f42cf48a812cb3aec3764a04570557);
+            
+    
+            var poly_line_dfcfeff956778f595b9f7d0250170f44 = L.polyline(
+                [[-3.8891567, -38.6108356], [-3.8898521, -38.6171332]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var marker_5459d8919e85e88246739d81f099bcde = L.marker(
+                [-3.8898521, -38.6171332],
+                {
+}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var div_icon_b9b684da297b3a8c2bb17aa1c636c120 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:green;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e4\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_5459d8919e85e88246739d81f099bcde.setIcon(div_icon_b9b684da297b3a8c2bb17aa1c636c120);
+        
+    
+        var popup_3102f2f21e3d632ea80fc30bca8c0cca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6b0420cf6f2c7c2a50945c57af041c9 = $(`<div id="html_b6b0420cf6f2c7c2a50945c57af041c9" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  ROBERTO<br><b>Placa:</b>  RIG8G48<br><b>Ordem:</b> 4<br><b>Cliente:</b> UNICOMPRAS - LJ 02<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 285.0<br><b>Faturamento:</b> R$ 2460.0</div>`)[0];
+                popup_3102f2f21e3d632ea80fc30bca8c0cca.setContent(html_b6b0420cf6f2c7c2a50945c57af041c9);
+            
+        
+
+        marker_5459d8919e85e88246739d81f099bcde.bindPopup(popup_3102f2f21e3d632ea80fc30bca8c0cca)
+        ;
+
+        
+    
+    
+            marker_5459d8919e85e88246739d81f099bcde.bindTooltip(
+                `<div>
+                     4 - UNICOMPRAS - LJ 02 (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5459d8919e85e88246739d81f099bcde.setIcon(div_icon_b9b684da297b3a8c2bb17aa1c636c120);
+            
+    
+            var poly_line_78517aa12a38d3a2706384e6a774cfd5 = L.polyline(
+                [[-3.8898521, -38.6171332], [-3.8575733, -38.645753]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var marker_a4e184c215084e7942c2cc1b74826d19 = L.marker(
+                [-3.8575733, -38.645753],
+                {
+}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var div_icon_6c3a98a2218aa7f8ba0441fbf22629a7 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:green;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e5\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_a4e184c215084e7942c2cc1b74826d19.setIcon(div_icon_6c3a98a2218aa7f8ba0441fbf22629a7);
+        
+    
+        var popup_73a1ccfbf4f6031065539bd80fea7727 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d020474d0d265cb079bfd9322da28ca4 = $(`<div id="html_d020474d0d265cb079bfd9322da28ca4" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  ROBERTO<br><b>Placa:</b>  RIG8G48<br><b>Ordem:</b> 5<br><b>Cliente:</b> BENCAO DE DEUS - LUZARDO VIANA<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 35.9<br><b>Faturamento:</b> R$ 388.8</div>`)[0];
+                popup_73a1ccfbf4f6031065539bd80fea7727.setContent(html_d020474d0d265cb079bfd9322da28ca4);
+            
+        
+
+        marker_a4e184c215084e7942c2cc1b74826d19.bindPopup(popup_73a1ccfbf4f6031065539bd80fea7727)
+        ;
+
+        
+    
+    
+            marker_a4e184c215084e7942c2cc1b74826d19.bindTooltip(
+                `<div>
+                     5 - BENCAO DE DEUS - LUZARDO VIANA (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a4e184c215084e7942c2cc1b74826d19.setIcon(div_icon_6c3a98a2218aa7f8ba0441fbf22629a7);
+            
+    
+            var poly_line_386bf2039ebe2f751fc579a8ecbe7a07 = L.polyline(
+                [[-3.8575733, -38.645753], [-3.846401, -38.656205]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var marker_5b61de90b84b1c10159aae32d1afec75 = L.marker(
+                [-3.846401, -38.656205],
+                {
+}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var div_icon_84544fbb078d80893d58bf79795e8c2b = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:green;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e6\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_5b61de90b84b1c10159aae32d1afec75.setIcon(div_icon_84544fbb078d80893d58bf79795e8c2b);
+        
+    
+        var popup_6baceaa65ac6c53778d5708af00e3180 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_081fa761270d64a84da29b09e379e143 = $(`<div id="html_081fa761270d64a84da29b09e379e143" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  ROBERTO<br><b>Placa:</b>  RIG8G48<br><b>Ordem:</b> 6<br><b>Cliente:</b> SUPERMERCADO CRISOSTOMO - LJ 01<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 45.4<br><b>Faturamento:</b> R$ 765.49</div>`)[0];
+                popup_6baceaa65ac6c53778d5708af00e3180.setContent(html_081fa761270d64a84da29b09e379e143);
+            
+        
+
+        marker_5b61de90b84b1c10159aae32d1afec75.bindPopup(popup_6baceaa65ac6c53778d5708af00e3180)
+        ;
+
+        
+    
+    
+            marker_5b61de90b84b1c10159aae32d1afec75.bindTooltip(
+                `<div>
+                     6 - SUPERMERCADO CRISOSTOMO - LJ 01 (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5b61de90b84b1c10159aae32d1afec75.setIcon(div_icon_84544fbb078d80893d58bf79795e8c2b);
+            
+    
+            var poly_line_afbffeaea197283a3778fd5d17417a7c = L.polyline(
+                [[-3.846401, -38.656205], [-3.8463687, -38.6555481]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var marker_47f5f69af18eafd8d274d4154a99a2a9 = L.marker(
+                [-3.8463687, -38.6555481],
+                {
+}
+            ).addTo(feature_group_29e6b711ca957f577dbfc39b42b453bc);
+        
+    
+            var div_icon_c61f8c90f441acaa00e9457f8b64c383 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:green;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e7\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_47f5f69af18eafd8d274d4154a99a2a9.setIcon(div_icon_c61f8c90f441acaa00e9457f8b64c383);
+        
+    
+        var popup_ead19400c25b08af23ecb168c63baa63 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cdce8ae2fffdcb80345918066a49ecc7 = $(`<div id="html_cdce8ae2fffdcb80345918066a49ecc7" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  ROBERTO<br><b>Placa:</b>  RIG8G48<br><b>Ordem:</b> 7<br><b>Cliente:</b> BENCAO DE DEUS - MARACANAU<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 44.9<br><b>Faturamento:</b> R$ 350.2</div>`)[0];
+                popup_ead19400c25b08af23ecb168c63baa63.setContent(html_cdce8ae2fffdcb80345918066a49ecc7);
+            
+        
+
+        marker_47f5f69af18eafd8d274d4154a99a2a9.bindPopup(popup_ead19400c25b08af23ecb168c63baa63)
+        ;
+
+        
+    
+    
+            marker_47f5f69af18eafd8d274d4154a99a2a9.bindTooltip(
+                `<div>
+                     7 - BENCAO DE DEUS - MARACANAU (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_47f5f69af18eafd8d274d4154a99a2a9.setIcon(div_icon_c61f8c90f441acaa00e9457f8b64c383);
+            
+    
+            feature_group_29e6b711ca957f577dbfc39b42b453bc.addTo(map_f93d48d24d667016da161a582ea5a460);
+        
+    
+            var feature_group_271fe98f09dba48238e3fa21fd9f6f21 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_ed23352d2610be4c943394ef1fc07cec = L.marker(
+                [-3.7572635398641, -38.5854081195323],
+                {
+}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var icon_cbe7661086a6247d15baac227ae563bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_237bca257a706c627708ccdbdbcda4e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b5ffc68b79bdb8238f590f6996a6d60 = $(`<div id="html_0b5ffc68b79bdb8238f590f6996a6d60" style="width: 100.0%; height: 100.0%;">VALEMILK-CD</div>`)[0];
+                popup_237bca257a706c627708ccdbdbcda4e6.setContent(html_0b5ffc68b79bdb8238f590f6996a6d60);
+            
+        
+
+        marker_ed23352d2610be4c943394ef1fc07cec.bindPopup(popup_237bca257a706c627708ccdbdbcda4e6)
+        ;
+
+        
+    
+    
+                marker_ed23352d2610be4c943394ef1fc07cec.setIcon(icon_cbe7661086a6247d15baac227ae563bc);
+            
+    
+            var poly_line_9a14fa9178ab6a862c5cf3760624601f = L.polyline(
+                [[-3.7572635398641, -38.5854081195323], [-3.7566112, -38.6024185]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var marker_8d07ac8429014e57b062230cf483dbfb = L.marker(
+                [-3.7566112, -38.6024185],
+                {
+}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var div_icon_0ec6dc0e70d21760fa44887e8a2b5009 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:purple;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e1\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_8d07ac8429014e57b062230cf483dbfb.setIcon(div_icon_0ec6dc0e70d21760fa44887e8a2b5009);
+        
+    
+        var popup_cb74bb85515b1e61352805c1bde06657 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9ad7924fa3fea817df1f1fcc63c767b = $(`<div id="html_b9ad7924fa3fea817df1f1fcc63c767b" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  WEMINSON<br><b>Placa:</b>  ORS2771<br><b>Ordem:</b> 1<br><b>Cliente:</b> CENTERBOX - PRQ GENIBAU<br><b>Turno:</b> MANHA<br><b>Peso:</b> 32.5<br><b>Faturamento:</b> R$ 910.93</div>`)[0];
+                popup_cb74bb85515b1e61352805c1bde06657.setContent(html_b9ad7924fa3fea817df1f1fcc63c767b);
+            
+        
+
+        marker_8d07ac8429014e57b062230cf483dbfb.bindPopup(popup_cb74bb85515b1e61352805c1bde06657)
+        ;
+
+        
+    
+    
+            marker_8d07ac8429014e57b062230cf483dbfb.bindTooltip(
+                `<div>
+                     1 - CENTERBOX - PRQ GENIBAU (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8d07ac8429014e57b062230cf483dbfb.setIcon(div_icon_0ec6dc0e70d21760fa44887e8a2b5009);
+            
+    
+            var poly_line_41e7c0b527176ea5205e1bdb26b51e1b = L.polyline(
+                [[-3.7566112, -38.6024185], [-3.7807157, -38.6223482]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var marker_33efb8525b098b8f943675770794e024 = L.marker(
+                [-3.7807157, -38.6223482],
+                {
+}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var div_icon_2f590d5f2bb8d064a37bc866259b08f3 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:purple;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e2\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_33efb8525b098b8f943675770794e024.setIcon(div_icon_2f590d5f2bb8d064a37bc866259b08f3);
+        
+    
+        var popup_0aa6f5026e707d5cc5b23502ff20dcbc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b9e95c249c11acb473c1cac05bd2825 = $(`<div id="html_0b9e95c249c11acb473c1cac05bd2825" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  WEMINSON<br><b>Placa:</b>  ORS2771<br><b>Ordem:</b> 2<br><b>Cliente:</b> CENTERBOX - ATACAREJO<br><b>Turno:</b> MANHA<br><b>Peso:</b> 14.1<br><b>Faturamento:</b> R$ 329.82</div>`)[0];
+                popup_0aa6f5026e707d5cc5b23502ff20dcbc.setContent(html_0b9e95c249c11acb473c1cac05bd2825);
+            
+        
+
+        marker_33efb8525b098b8f943675770794e024.bindPopup(popup_0aa6f5026e707d5cc5b23502ff20dcbc)
+        ;
+
+        
+    
+    
+            marker_33efb8525b098b8f943675770794e024.bindTooltip(
+                `<div>
+                     2 - CENTERBOX - ATACAREJO (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_33efb8525b098b8f943675770794e024.setIcon(div_icon_2f590d5f2bb8d064a37bc866259b08f3);
+            
+    
+            var poly_line_82db0b7677bf461bd1e9ac103be3f3ed = L.polyline(
+                [[-3.7807157, -38.6223482], [-3.7881655, -38.6279994]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var marker_b004023732bec1531b25bd8f2742e091 = L.marker(
+                [-3.7881655, -38.6279994],
+                {
+}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var div_icon_f92e0cabd81de2be781499d822e92d49 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:purple;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e3\u003c/span\u003e\u003cspan\u003e\u2600\ufe0f\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_b004023732bec1531b25bd8f2742e091.setIcon(div_icon_f92e0cabd81de2be781499d822e92d49);
+        
+    
+        var popup_fbcabdb5649f30166788fd9ef3d50ec3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a24810b0edcc71b6f4761ddc5633cc1 = $(`<div id="html_8a24810b0edcc71b6f4761ddc5633cc1" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  WEMINSON<br><b>Placa:</b>  ORS2771<br><b>Ordem:</b> 3<br><b>Cliente:</b> MERCANTIL DEUS TE PAGUE<br><b>Turno:</b> MANHA<br><b>Peso:</b> 60.6<br><b>Faturamento:</b> R$ 507.2</div>`)[0];
+                popup_fbcabdb5649f30166788fd9ef3d50ec3.setContent(html_8a24810b0edcc71b6f4761ddc5633cc1);
+            
+        
+
+        marker_b004023732bec1531b25bd8f2742e091.bindPopup(popup_fbcabdb5649f30166788fd9ef3d50ec3)
+        ;
+
+        
+    
+    
+            marker_b004023732bec1531b25bd8f2742e091.bindTooltip(
+                `<div>
+                     3 - MERCANTIL DEUS TE PAGUE (MANHA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b004023732bec1531b25bd8f2742e091.setIcon(div_icon_f92e0cabd81de2be781499d822e92d49);
+            
+    
+            var poly_line_22f9635ee5a804f2532e37b01c93a872 = L.polyline(
+                [[-3.7881655, -38.6279994], [-3.76348683, -38.6404932]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var marker_9f36a5fa4df3c220bd27c43e3f643512 = L.marker(
+                [-3.76348683, -38.6404932],
+                {
+}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var div_icon_f066a30e8ad1ef50998f3ef43f7fca40 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:purple;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e4\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_9f36a5fa4df3c220bd27c43e3f643512.setIcon(div_icon_f066a30e8ad1ef50998f3ef43f7fca40);
+        
+    
+        var popup_86f3c949408496ba2c5459eb038bfe91 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d2e53d468265bd38e45265ee82d20a08 = $(`<div id="html_d2e53d468265bd38e45265ee82d20a08" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  WEMINSON<br><b>Placa:</b>  ORS2771<br><b>Ordem:</b> 4<br><b>Cliente:</b> MERCADINHO ARATURI<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 15.6<br><b>Faturamento:</b> R$ 181.6</div>`)[0];
+                popup_86f3c949408496ba2c5459eb038bfe91.setContent(html_d2e53d468265bd38e45265ee82d20a08);
+            
+        
+
+        marker_9f36a5fa4df3c220bd27c43e3f643512.bindPopup(popup_86f3c949408496ba2c5459eb038bfe91)
+        ;
+
+        
+    
+    
+            marker_9f36a5fa4df3c220bd27c43e3f643512.bindTooltip(
+                `<div>
+                     4 - MERCADINHO ARATURI (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9f36a5fa4df3c220bd27c43e3f643512.setIcon(div_icon_f066a30e8ad1ef50998f3ef43f7fca40);
+            
+    
+            var poly_line_9d43f80487a681c915ed27549dafc660 = L.polyline(
+                [[-3.76348683, -38.6404932], [-3.7600164, -38.6160465]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var marker_aa792a7a88c1b6a3a6871884c7f8fcab = L.marker(
+                [-3.7600164, -38.6160465],
+                {
+}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var div_icon_75788709290041849a611f52b64c0520 = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:purple;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e5\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_aa792a7a88c1b6a3a6871884c7f8fcab.setIcon(div_icon_75788709290041849a611f52b64c0520);
+        
+    
+        var popup_2f224b45dfd96e3c3d4edf8868cb433f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ddda8991e55276138c5adf0bd60e624 = $(`<div id="html_8ddda8991e55276138c5adf0bd60e624" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  WEMINSON<br><b>Placa:</b>  ORS2771<br><b>Ordem:</b> 5<br><b>Cliente:</b> CIA DA CARNE<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 6.8<br><b>Faturamento:</b> R$ 230.62</div>`)[0];
+                popup_2f224b45dfd96e3c3d4edf8868cb433f.setContent(html_8ddda8991e55276138c5adf0bd60e624);
+            
+        
+
+        marker_aa792a7a88c1b6a3a6871884c7f8fcab.bindPopup(popup_2f224b45dfd96e3c3d4edf8868cb433f)
+        ;
+
+        
+    
+    
+            marker_aa792a7a88c1b6a3a6871884c7f8fcab.bindTooltip(
+                `<div>
+                     5 - CIA DA CARNE (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa792a7a88c1b6a3a6871884c7f8fcab.setIcon(div_icon_75788709290041849a611f52b64c0520);
+            
+    
+            var poly_line_6f79691e6cf1e14e3282cb739af64685 = L.polyline(
+                [[-3.7600164, -38.6160465], [-3.75761186, -38.61031199]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var marker_9bafde9ac5267bdd08de1a5296a8442f = L.marker(
+                [-3.75761186, -38.61031199],
+                {
+}
+            ).addTo(feature_group_271fe98f09dba48238e3fa21fd9f6f21);
+        
+    
+            var div_icon_df9076b7186aa7512792a539f31d8e7a = L.divIcon({
+  "html": "\u003cdiv style=\u0027width:34px;height:34px;background:purple;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;\u0027\u003e\u003cspan style=\u0027font-weight:bold;\u0027\u003e6\u003c/span\u003e\u003cspan\u003e\ud83d\udd52\u003c/span\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_9bafde9ac5267bdd08de1a5296a8442f.setIcon(div_icon_df9076b7186aa7512792a539f31d8e7a);
+        
+    
+        var popup_1b7360dcee967b6082fe277f0033bf2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9b8e931251f573cc0658e62710f9322 = $(`<div id="html_f9b8e931251f573cc0658e62710f9322" style="width: 100.0%; height: 100.0%;"><b>Motorista:</b>  WEMINSON<br><b>Placa:</b>  ORS2771<br><b>Ordem:</b> 6<br><b>Cliente:</b> MIRELLY - CONJ CEARA<br><b>Turno:</b> DIURNO<br><b>Peso:</b> 87.4<br><b>Faturamento:</b> R$ 1075.18</div>`)[0];
+                popup_1b7360dcee967b6082fe277f0033bf2a.setContent(html_f9b8e931251f573cc0658e62710f9322);
+            
+        
+
+        marker_9bafde9ac5267bdd08de1a5296a8442f.bindPopup(popup_1b7360dcee967b6082fe277f0033bf2a)
+        ;
+
+        
+    
+    
+            marker_9bafde9ac5267bdd08de1a5296a8442f.bindTooltip(
+                `<div>
+                     6 - MIRELLY - CONJ CEARA (DIURNO)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9bafde9ac5267bdd08de1a5296a8442f.setIcon(div_icon_df9076b7186aa7512792a539f31d8e7a);
+            
+    
+            feature_group_271fe98f09dba48238e3fa21fd9f6f21.addTo(map_f93d48d24d667016da161a582ea5a460);
+        
+    
+            var layer_control_29e34610a0f767ccd8c33e43128b7456_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_d8652a08393e07bcdb0b3d640d187573,
+                },
+                overlays :  {
+                    "Caminh\u00e3o: AGENDAMENTO - BARAT\u00c3O" : feature_group_b33e901bf7bb65c7d89e78a415310a1c,
+                    "Caminh\u00e3o: EDSON" : feature_group_5266f42b437122c44a6965d575e1b14f,
+                    "Caminh\u00e3o: FELIX" : feature_group_f2f798bce600200504d42686b1b14754,
+                    "Caminh\u00e3o: LUAN" : feature_group_e2dd23d91d761c4d75463022f965db5c,
+                    "Caminh\u00e3o: ROBERTO" : feature_group_29e6b711ca957f577dbfc39b42b453bc,
+                    "Caminh\u00e3o: WEMINSON" : feature_group_271fe98f09dba48238e3fa21fd9f6f21,
+                },
+            };
+            let layer_control_29e34610a0f767ccd8c33e43128b7456 = L.control.layers(
+                layer_control_29e34610a0f767ccd8c33e43128b7456_layers.base_layers,
+                layer_control_29e34610a0f767ccd8c33e43128b7456_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_f93d48d24d667016da161a582ea5a460);
+
+        
+</script>
+</html>
